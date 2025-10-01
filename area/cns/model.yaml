@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: model-registry
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kubeflow/model-registry.git
+    targetRevision: v0.2.22
+    path: manifests/kustomize
+    kustomize:
+      namePrefix: mr-
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cns   # ou seu PROFILE_NAME
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
