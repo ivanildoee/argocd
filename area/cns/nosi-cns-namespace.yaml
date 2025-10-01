@@ -3,7 +3,7 @@ kind: Profile
 metadata:
   ## the profile name will be the namespace name
   ## WARNING: unexpected behavior may occur if the namespace already exists
-  name: nosi-cns
+  name: cns
 spec:
   ## the owner of the profile
   ## NOTE: you may wish to make a global super-admin the owner of all profiles
@@ -11,7 +11,7 @@ spec:
   ##       them from adding/removing contributors
   owner:
     kind: User
-    name: Ivanildo.Silva@nosi.cv
+    name: user@example.com
 
   ## plugins extend the functionality of the profile
   ## https://github.com/kubeflow/kubeflow/tree/master/components/profile-controller#plugins
